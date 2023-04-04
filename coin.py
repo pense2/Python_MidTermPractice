@@ -4,6 +4,35 @@ import random
 # The Coin class simulates a coin that can
 # be flipped.
 
+class coin():
+    def __init__(self):
+        self.__sideup = "Heads"
+
+    def toss(self):
+        res = random.randint(0, 1)
+        if res == 0:
+            self.__sideup = "Heads"
+        else:
+            self.__sideup = "Tails"
+
+    def get_sideup(self):
+        return self.__sideup
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class Coin:
 
     # The __init__ method initializes the

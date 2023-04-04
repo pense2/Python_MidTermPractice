@@ -1,10 +1,38 @@
 #Answer for Question 2 (5 points) in the Spring23 MidTerm Review question 
 
+
+
+
 def csv_reader_with_generator(file):
     result = []
-    for row in file:
-        result.append(row)
+    for line in file:
+        result.append(line)
         yield result
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# def csv_reader_with_generator(file):
+#     result = []
+#     for row in file:
+#         result.append(row)
+#        yield result
 
 
 import time

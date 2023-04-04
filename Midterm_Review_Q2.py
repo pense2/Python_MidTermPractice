@@ -12,17 +12,68 @@
 
 # note: The data is from a year that was not a leap year, so February has 28 days.
 
-#Solution for 1
-from datetime import date, datetime
-day_of_the_year = date(2019, 3, 1).timetuple().tm_yday
-print(day_of_the_year)
-steps_file=open("steps.txt",'r')
-count=0
-while(count!=day_of_the_year):
-    num_steps=steps_file.readline()
-    count+=1
-print(num_steps)
-steps_file.close()
+
+# Q2.1
+
+# Jan = 31 days, Feb = 28 days. March 1st = 1 day
+# 31+28+1 = 60
+
+file = open("steps.txt")
+
+fileData = [0 for i in range(366)]
+
+i = 0
+
+while i < 366:
+    fileOut = file.readline()
+    fileData[i] = fileOut
+    i += 1
+print("Steps on March 1st: " + fileData[59])
+
+file.close()
+
+# answer found was 1239
+
+# Q2.2
+
+file = open("steps.txt")
+index = 0
+
+for i in range(1, 13):
+    if i == 1 or i == 3 or i == 5 or i == 7 or i == 8 or i == 10 or i == 12:
+        n = 31
+    elif i == 2:
+        n = 28
+    elif i == 4 or i == 6 or i == 9 or i == 11:
+        n = 30
+    index = 0
+    total = 0
+    while index < n:
+        total += int(file.readline())
+        index += 1
+    print("Average number of steps for month ", i, " was ", total/n)
+file.close()
+
+
+
+
+
+
+
+
+
+
+# # #Solution for 1
+# from datetime import date, datetime
+# day_of_the_year = date(2019, 3, 1).timetuple().tm_yday
+# print(day_of_the_year)
+# steps_file=open("steps.txt",'r')
+# count=0
+# while(count!=day_of_the_year):
+#     num_steps=steps_file.readline()
+#     count+=1
+# print(num_steps)
+# steps_file.close()
 
 #Solution for 2
 from datetime import date, datetime
